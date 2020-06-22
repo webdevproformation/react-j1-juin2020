@@ -161,6 +161,31 @@ const saisonDetail = [
     }
 ];
 
+// Concept qui a été introduit avec l'ES6 = destructation d'objet
+
+const voiture = {
+    marque: "Peugeot",
+    modele: 206,
+    rouler() {
+        return "Je suis une " + this.marque + " " + this.modele;
+    }
+}
+
+console.log(voiture.marque); // méthode classique pour récupérer une valeur stockée objet 
+
+// nouvelle manière de faire via la destructuration
+
+const { marque, modele, rouler } = voiture;
+console.log(marque);
+console.log(modele);
+
+const r = rouler.bind(voiture);
+console.log(r());
+// éviter d'avoir à écrire voiture devant chaque propriété / méthode que tu veux utiliser et qui sont stockés
+// dans un objet
+
+
+
 class Rappel extends Component {
     state = {}
     render() {
@@ -200,7 +225,7 @@ class Rappel extends Component {
                 <hr />
                 <h2>combo filter() + map()</h2>
                 <ul>
-                    {saisonDetail.filter((el) => el.isActif === true).map((el) => <li>{el.nom}</li>)}
+                    {saisonDetail.filter(el => el.isActif === true).map(el => <li>{el.nom}</li>)}
                 </ul>
             </div>
         );
