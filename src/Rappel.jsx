@@ -48,6 +48,39 @@ let actionFormation = formation.description.bind(formation);
 // this a perdu son contexte d'exécution 
 // on est obligé d'ajouter .bind(formation); pour garantir que this conserve le contexte d'exécution (action => .bind(formation))
 
+// arrow function en javascript 
+
+// créer une fonction de manière classique
+
+const aireCarre = function (largeur) {
+    return largeur * largeur;
+}
+
+// avec l'arrivée de l'ES6 => nouvelle manière de créer des fonctions
+
+const aireCarre2 = (largeur) => { // arrow function = fonction fléchée
+    return largeur * largeur;
+}
+
+// les fonctions fléchées disposent de syntaxes à connaitre
+
+// si jamais la fonction fléchée ne dispose que d'un seul paramuètre
+// vous pouvez enlever les pranthèses
+
+const aireCercle = rayon => {
+    return rayon * rayon * 3.14;
+}
+
+// si jamais vous avez 1 seule instruction dans les accolades 
+// de la fonction fléchée enlever les accolades ET aussi le mot clé return
+
+const saluation = nom => "bonjour " + nom;
+/*
+const salutation = ( nom ) => {
+    return "bonjour " + nom;
+}
+*/
+
 class Rappel extends Component {
     state = {}
     render() {
@@ -60,6 +93,11 @@ class Rappel extends Component {
                 <hr />
                 <p>{formation.description()}</p>
                 <p>{actionFormation()}</p>
+                <hr />
+                <h2>Arrow function</h2>
+                <p>{aireCarre2(10)}</p>
+                <p>{aireCercle(20)}</p>
+                <p>{saluation("Jean")}</p>
             </div>
         );
     }
