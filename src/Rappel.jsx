@@ -139,8 +139,27 @@ const listeMatiere = matiere.map((el) => <li>{el}</li>);
 
 // créer un tableau
 const saison = ["Printemps", "Ete", "Automne", "Hiver"];
-// est ce que vous pouvez afficher dans une liste <li> les différents éléments du tableau
+const listeSaison = saison.map((el) => <li>{el}</li>);
+// est ce que vous pouvez afficher dans une liste <li> les différents éléments du tableau en utilisant map();
 
+const saisonDetail = [
+    {
+        nom: "Printemps",
+        isActif: true
+    },
+    {
+        nom: "Ete",
+        isActif: false
+    },
+    {
+        nom: "Automne",
+        isActif: false
+    },
+    {
+        nom: "Hiver",
+        isActif: true
+    }
+];
 
 class Rappel extends Component {
     state = {}
@@ -169,6 +188,19 @@ class Rappel extends Component {
                 </ul>
                 <ul>
                     {listeMatiere}
+                </ul>
+                {/** afficher les différents élément du éléments de la variable saison ici ! */}
+                <ul>
+                    {listeSaison}
+                </ul>
+                <hr />
+                <ul>
+                    {saison.map((el) => <li>{el}</li>) /** autre solution */}
+                </ul>
+                <hr />
+                <h2>combo filter() + map()</h2>
+                <ul>
+                    {saisonDetail.filter((el) => el.isActif === true).map((el) => <li>{el.nom}</li>)}
                 </ul>
             </div>
         );
