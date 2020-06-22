@@ -125,6 +125,23 @@ recette.cuire2();
 // arrow function ne crée de nouveau contexte d'exécution 
 // pas besoin d'utiliser 
 
+// méthode .map() à utiliser sur les tableaux
+// méthode que l'on va utiliser dans React == boucle for 
+// parcourir un tableau 
+
+// map() l'équivalent de for en javascript dans React
+
+const matiere = ["Javascript", "Angular", "React", "Vue.js"];
+
+//afficher dans chaque matière
+
+const listeMatiere = matiere.map((el) => <li>{el}</li>);
+
+// créer un tableau
+const saison = ["Printemps", "Ete", "Automne", "Hiver"];
+// est ce que vous pouvez afficher dans une liste <li> les différents éléments du tableau
+
+
 class Rappel extends Component {
     state = {}
     render() {
@@ -142,7 +159,17 @@ class Rappel extends Component {
                 <p>{aireCarre2(10)}</p>
                 <p>{aireCercle(20)}</p>
                 <p>{saluation("Jean")}</p>
-
+                <hr />
+                <h2>méthode .map()</h2>
+                <ul>
+                    <li>{matiere[0]}</li>
+                    <li>{matiere[1]}</li>
+                    <li>{matiere[2]}</li>
+                    <li>{matiere[3]}</li>
+                </ul>
+                <ul>
+                    {listeMatiere}
+                </ul>
             </div>
         );
     }
