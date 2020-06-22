@@ -27,8 +27,26 @@ const person = {
 };
 
 // créer une variable
-let action = "marcher";
+let action = "parler";
 // syntaxe tableau pour appeler une méthode d'un objet
+
+// le mot clé this 
+// mot clé que l'on va beaucoup utiliser lorsque l'on fait du React 
+
+const formation = {
+    nom: "Découverte React en 1 semaine",
+    description: function () {
+        return "La formation s'appelle " + this.nom;
+    }
+}
+
+let actionFormation = formation.description.bind(formation);
+// Attention pas de ()
+// stocker une référence de la fonction description dans la variable actionFormation
+
+// message d'erreur  => this is undefined
+// this a perdu son contexte d'exécution 
+// on est obligé d'ajouter .bind(formation); pour garantir que this conserve le contexte d'exécution (action => .bind(formation))
 
 class Rappel extends Component {
     state = {}
@@ -39,6 +57,9 @@ class Rappel extends Component {
                 <p>Je m'appelle : {person.nom} {person.parler()}</p>
                 <p>{person.marcher()}</p>
                 <p>{person[action]()}</p>
+                <hr />
+                <p>{formation.description()}</p>
+                <p>{actionFormation()}</p>
             </div>
         );
     }
