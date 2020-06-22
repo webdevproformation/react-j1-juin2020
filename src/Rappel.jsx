@@ -103,6 +103,28 @@ console.log(list2);
 //utilise beaucoup les arrow function lorsque l'on 
 // écrit des callback
 
+// on peut utiliser les arrow functions dans les objets + mot clé this
+
+const recette = {
+    nom: "gratin",
+    cuire() { // Méthode ES pour créer des méthodes
+        let that = this;
+        setTimeout(function () {
+            console.log(this.nom + "est en train de cuire !");
+        }.bind(that), 3000);
+    },
+    cuire2() {
+        setTimeout(() => {
+            console.log(this.nom + "est en train de cuire !");
+        }, 3000)
+    }
+};
+// appel la fonction cuire qui est dans l'objet recette
+recette.cuire();
+recette.cuire2();
+// arrow function ne crée de nouveau contexte d'exécution 
+// pas besoin d'utiliser 
+
 class Rappel extends Component {
     state = {}
     render() {
