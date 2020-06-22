@@ -20,8 +20,15 @@ const person = {
     nom: "Béatrice", // propriété
     parler: function () { // méthode
         console.log("je parle");
+    },
+    marcher() { // syntaxe ES6 pour créer de méthode d'objet 
+        return "je marche ";
     }
 };
+
+// créer une variable
+let action = "marcher";
+// syntaxe tableau pour appeler une méthode d'un objet
 
 class Rappel extends Component {
     state = {}
@@ -29,10 +36,14 @@ class Rappel extends Component {
         return (
             <div>
                 <h1>{nomComposant} en javascript ES6</h1>
-                <p>Je m'appelle : {person.nom}</p>
+                <p>Je m'appelle : {person.nom} {person.parler()}</p>
+                <p>{person.marcher()}</p>
+                <p>{person[action]()}</p>
             </div>
         );
     }
 }
 
 export default Rappel;
+
+// https://github.com/webdevproformation/react-j1-juin2020
