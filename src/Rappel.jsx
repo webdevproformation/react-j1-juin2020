@@ -81,6 +81,28 @@ const salutation = ( nom ) => {
 }
 */
 
+/**
+.filter() méthode à utiliser sur les tableaux
+ */
+
+const planning = [
+    { id: 1, "nom": "JS", isActif: false },
+    { id: 2, "nom": "React", isActif: true }
+];
+// je veux récupérer l'ensemble des matières sont en status isActif = true
+// filter a une fonction comme argument // callback
+let list = planning.filter(function (el) { return el.isActif === true });
+
+console.log(list);
+
+// au manière d'écrire le filtre précédent
+
+let list2 = planning.filter(el => el.isActif === true);
+
+console.log(list2);
+//utilise beaucoup les arrow function lorsque l'on 
+// écrit des callback
+
 class Rappel extends Component {
     state = {}
     render() {
@@ -98,6 +120,7 @@ class Rappel extends Component {
                 <p>{aireCarre2(10)}</p>
                 <p>{aireCercle(20)}</p>
                 <p>{saluation("Jean")}</p>
+
             </div>
         );
     }
