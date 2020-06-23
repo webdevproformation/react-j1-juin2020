@@ -250,3 +250,5 @@ export default Rappel;
 
 
 // Avez vous une question sur ce que l'on vu hier ??
+
+// finir les concepts apportés par l'ajout de langage en javasript ES6
