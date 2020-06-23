@@ -235,3 +235,17 @@ class Rappel extends Component {
 export default Rappel;
 
 // https://github.com/webdevproformation/react-j1-juin2020
+
+//  redémarrer visual studio
+
+// relancer le support de cours 
+// https://formation.webdevpro.net/react
+// login : react
+// mdp : react
+
+// redémarrer le projet jour1 sur react
+// se placer dans le dossier jour1 et lancer la commande 
+// npm start
+
+
+// Avez vous une question sur ce que l'on vu hier ??
