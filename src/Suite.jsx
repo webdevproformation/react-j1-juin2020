@@ -63,3 +63,14 @@ export default Suite;
 
 // composant il faut le rattacher au composant racine (root) de notre application React
 // composant root => App.js
+
+// nouvelle installation de react 
+
+// jour2
+
+// Ctrl + C
+// cd ..
+// create-react-app jour2
+// après le café
+// cd jour2
+// npm start
