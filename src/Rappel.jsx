@@ -171,6 +171,7 @@ const voiture = {
     }
 }
 
+
 console.log(voiture.marque); // méthode classique pour récupérer une valeur stockée objet 
 
 // nouvelle manière de faire via la destructuration
