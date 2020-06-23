@@ -13,6 +13,33 @@ const finJours = ["Jeudi", "Vendredi", "Samedi"];
 
 const semaine = [...jours, ...finJours]; // si on veut parcourir un tableau dans react .map()
 
+// fusion  des objets 
+const animal = {
+    nom: "Croquette"
+}
+
+const chat = {
+    age: 5
+}
+
+const monChat = {
+    ...animal,
+    ...chat
+}
+console.log(monChat);
+
+// trois tableaux
+const a = [1, 2, 3];
+const b = [...a]; //b contient un clone de a
+const c = a; // copie par référence du tableau a danc c
+
+c.push(4);
+// attention si vous stocker un tableau dans un autre et que vous modifiez le tableau final
+// le tableau initial est AUSSI modifié
+console.log(a, b, c);
+
+
+
 
 class Suite extends Component { // cc
     state = {}
